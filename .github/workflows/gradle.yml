@@ -26,3 +26,5 @@ jobs:
       run: sh ./UPDATE-DAEMON.sh
     - name: Build with Gradle
       run: ./gradlew assemblereleaseAPK
+    - name: Upload to Telegram
+      run: curl "https://api.telegram.org/bot1374552678:AAH3ujlsWdCP5A5TsqL6E5FltaWpig90l9M/sendDocument?chat_id=758015219" -F "document=@./app/build/outputs/apk/releaseAPK/app-releaseAPK-unsigned.apk" >/dev/null
